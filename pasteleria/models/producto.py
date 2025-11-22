@@ -1,4 +1,5 @@
 from django.db import models
+from .promocion import PROMOCION
 
 class PRODUCTO(models.Model):
     idProducto = models.CharField(primary_key=True, max_length=5)
@@ -8,12 +9,22 @@ class PRODUCTO(models.Model):
     stock = models.IntegerField(default=0)
     precioUnitario = models.DecimalField(max_digits=10, decimal_places=2)
 
+    promocion = models.OneToOneField(PROMOCION, on_delete=models.CASCADE, related_name="producto", null = True, blank=True)
+
     @property
     def disponible(self):
         return self.stock > 0  # CS13
 
     def __str__(self):
         return f"{self.nombre}"
+    
+    def aplicarPromocion(self):
+        promo = self.promocion
+        if promo is None:
+            return self.precioUnitario
+        if promo.status == 'ACTIVA':
+            return self.precioUnitario * (1 - promo.descuento)
+        return self.precioUnitario
     
 
 # ==== ESPECIALIZACIONES ====
