@@ -203,7 +203,7 @@ export class CarritoComponent {
     this.pedido.status = "Pedido recibido";
     this.statusActivo = this.status.indexOf(this.pedido.status);
   }
-<<<<<<< Updated upstream
+
   eliminar(id: number) {
   const confirmacion = window.confirm('¿Estás seguro de que quieres eliminar este producto del carrito?');
   if (confirmacion) {
@@ -221,7 +221,5 @@ decrementar(item: Item) {
   vaciar() {
     this.carritoService.vaciarCarrito();
   }
-=======
-  
->>>>>>> Stashed changes
+
 }
