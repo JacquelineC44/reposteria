@@ -4,7 +4,7 @@ from .producto import PRODUCTO
 
 
 class DETALLE(models.Model):
-    idItem = models.CharField(primary_key=True, max_length=5)
+    idItem = models.AutoField(primary_key=True)
 
     pedido = models.ForeignKey(PEDIDO, on_delete=models.CASCADE, related_name="detalles")
     producto = models.ForeignKey(PRODUCTO, on_delete=models.CASCADE, related_name="detalles")

@@ -2,7 +2,7 @@ from django.db import models
 from datetime import date
 
 class USUARIO(models.Model):
-    idUsuario = models.CharField(primary_key=True, max_length=5)
+    idUsuario = models.AutoField(primary_key=True)
 
     correo = models.EmailField(max_length=255, unique=True)
     nombreU = models.CharField(max_length=100)
@@ -11,6 +11,8 @@ class USUARIO(models.Model):
     nombres = models.CharField(max_length=120)
     apellidoP = models.CharField(max_length=60)
     apellidoM = models.CharField(max_length=60, null=True, blank=True)
+
+    direccionEntrega = models.CharField(null=True, blank=True, max_length=35)
 
     fechaN = models.DateField()
     celular = models.CharField(max_length=20)

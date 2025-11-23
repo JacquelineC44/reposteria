@@ -4,11 +4,19 @@ from .pedido import PEDIDO
 from .pastel import PASTEL
 from .promocion import PROMOCION
 from .detalle import DETALLE
+from .pan import PAN
+from .tarta import TARTA
+from .postre import POSTRE
+from .pastel import PASTEL_ESTABLECIDO
+from .pastel import PASTEL_PERSONALIZADO
 __all__ = [
     "USUARIO",
     "PRODUCTO",
     "PEDIDO", 
     "PROMOCION",
     "PASTEL",
-    "DETALLE"
+    "DETALLE",
+    "POSTRE",
+    "TARTA",
+    "PAN"
 ]

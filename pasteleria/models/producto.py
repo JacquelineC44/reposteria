@@ -3,16 +3,13 @@ from .promocion import PROMOCION
 
 class PRODUCTO(models.Model):
     TIPO_CHOICES = (
-        ("PASTEL", "Pastel"),
-        ("TARTA", "Tarta"),
-        ("POSTRE", "Postre"),
-        ("PAN", "Pan"),
+        ("PASTEL", "pastel"),
+        ("TARTA", "tarta"),
+        ("POSTRE", "postre"),
+        ("PAN", "pan"),
     )
 
-    idProducto = models.CharField(primary_key=True, max_length=5)
-    nombre = models.CharField(max_length=120, null=True, blank=True)
-    descripcion = models.CharField(max_length=255, null=True, blank=True)
-    imagen = models.CharField(max_length=255, null=True, blank=True)
+    idProducto = models.AutoField(primary_key=True)
     stock = models.IntegerField(default=0)
     precioUnitario = models.DecimalField(max_digits=10, decimal_places=2)
 

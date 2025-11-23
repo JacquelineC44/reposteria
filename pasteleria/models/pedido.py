@@ -7,8 +7,8 @@ class PEDIDO(models.Model):
     usuario = models.ForeignKey(USUARIO, on_delete=models.CASCADE, related_name="pedidos")
     fechaEntrega = models.DateField(null=True, blank=True)
     horaEntrega = models.TimeField(null=True, blank=True)
-    direccionEntrega = models.CharField(null=True, blank=True, max_length=35)
     total = models.DecimalField(max_digits=7, decimal_places=2)
+    calificacion = models.IntegerField(max_length=3)
     ENTREGA_CHOICES = (
         ("PICKUP", "pickup"),
         ("DOMICILIO", "domicilio"),
