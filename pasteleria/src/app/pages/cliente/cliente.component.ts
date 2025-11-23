@@ -3,10 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 @Component({
   selector: 'app-cliente',
   standalone: true,
@@ -70,5 +67,5 @@ export class ClienteComponent {
   }
 
 
-
+}
 
