@@ -77,6 +77,10 @@
     <h1>Selecciona tu forma de entrega</h1>
     <button  (click)="pickUp()" class="boton1"><i class="bi bi-shop"></i> Pick Up</button>
     <button (click)="domicilio()" class="boton2"><i class="bi bi-truck"></i>Envio Domicilo</button>
+    <div class="botones">
+      <button class="btn2" (click)="regresarPaso(2)">Regresar</button>
+
+    </div>
   </div>
 
   <div *ngIf="pasoActual===3" >
@@ -88,7 +92,11 @@
       <button (click)="mercadoPago()" class="boton2">
         <i class="bi bi-credit-card"></i>Mercado Pago  
       </button>
+      <div class="botones">
+        <button class="btn2" (click)="regresarPaso(3)">Regresar</button>
+      </div>
     </div>
+    
     <!-- Formulario PayPal --> 
     <div *ngIf="eleccionPaypal" class="form-container">
       <h2>Datos del cliente - PayPal</h2>
@@ -111,6 +119,9 @@
           </button>
         </div>
       </form>
+      <div class="botones">
+        <button class="btn2" (click)="regresarPaso(4)">Regresar</button>
+      </div>
     </div>
     <!-- Formulario MercadoPago -->
     <div *ngIf="eleccionMP" class="form-container">
@@ -165,8 +176,12 @@
           <button type="button" class="btn1" (click)="pagarMP(mpForm.value)" [disabled]="!mpForm.valid">Siguiente</button>
         </div> 
       </form>
+      <div class="botones">
+        <button class="btn2" (click)="regresarPaso(4)">Regresar</button>
+      </div>
     </div>
   </div>
+
   <div *ngIf="pasoActual===4" class="resumen">
     <div class="container">
       <h2>Productos:</h2>
@@ -218,6 +233,9 @@
           [class.completado]="i < statusActivo">
           {{ paso }}
         </div>
+      </div>
+      <div class="botones">
+        <button class="btn2" (click)="terminar()">Regresar</button>
       </div>
     </div>
 </app-asistente-pasos>

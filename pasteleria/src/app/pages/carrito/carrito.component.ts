@@ -121,6 +121,19 @@ export class CarritoComponent {
   cambiarPaso(p: number) {
     this.pasoActual = p;
   }
+
+  regresarPaso(p: number) {
+    this.pasoActual = p-1;
+    this.eleccionPaypal = false;
+  this.eleccionMP = false;
+  }
+  terminar() {
+    this.pasoActual = 0;
+    this.eleccionPaypal = false;
+    this.eleccionMP = false;
+    this.mostrarProductos=true;
+    this.productosI = [];
+  }
   
   total: number = 0;
 
