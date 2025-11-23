@@ -5,14 +5,11 @@ services:
   flask_app:
     build: ./api
     container_name: reposteria_flask
-    env_file:
-      - ./api/.env
+    restart: always
     depends_on:
       - postgres_db
-    networks:
-      - reposteria_net
-    expose:
-      - "5000"
+    ports:
+      - "5000:5000"
 
   nginx:
     image: nginx:latest
@@ -24,8 +21,6 @@ services:
       - ./pasteleria/dist:/usr/share/nginx/html
     depends_on:
       - flask_app
-    networks:
-      - reposteria_net
 
   postgres_db:
     image: postgres:15
@@ -39,11 +34,6 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    networks:
-      - reposteria_net
-
-networks:
-  reposteria_net:
 
 volumes:
   postgres_data:
