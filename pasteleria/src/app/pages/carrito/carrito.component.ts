@@ -5,12 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { Pedido } from '../../models/pedido';
 import {Producto}  from '../../models/producto';
 import { AuthService } from '../../services/auth.service';
-<<<<<<< Updated upstream
 import { CarritoService } from '../../services/cart.service';
 import { Router } from '@angular/router';
 import { Item } from '../../models/item';
-=======
->>>>>>> Stashed changes
+
 
 @Component({
   selector: 'app-carrito',

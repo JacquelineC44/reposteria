@@ -27,22 +27,16 @@ export class ClienteComponent {
 
   username: string = '';
   password: string = '';
-<<<<<<< Updated upstream
   errorMessage: string = '';
-=======
-  errorMsg: string = '';
->>>>>>> Stashed changes
 
   closeModal() {
     this.close.emit(); // ← Notifica al app.component.html que debe cerrar
   }
 
 
-<<<<<<< Updated upstream
+
   constructor(private router: Router, private auth: AuthService) {}
-=======
-  constructor(private router: Router, private authService: AuthService) {}
->>>>>>> Stashed changes
+
 
   irCrearCuenta() {
   this.closeModal();
