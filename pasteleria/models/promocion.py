@@ -1,11 +1,7 @@
 from django.db import models
-from .producto import PRODUCTO
 
 class PROMOCION(models.Model):
     idPromocion = models.CharField(primary_key=True, max_length=5)
-
-    producto = models.OneToOneField(PRODUCTO, on_delete=models.CASCADE, related_name="promocion")
-
     descuento = models.DecimalField(max_digits=5, decimal_places=2)  # CS7 formato 0.3
     vigencia = models.DateField()
     

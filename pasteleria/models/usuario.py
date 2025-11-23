@@ -16,8 +16,6 @@ class USUARIO(models.Model):
     celular = models.CharField(max_length=20)
 
     puntosReco = models.IntegerField(default=0)
-    saldoEqui = models.DecimalField(max_digits=10, decimal_places=2,
-                                    null=True, blank=True)
 
     @property
     def edad(self):
@@ -25,6 +23,9 @@ class USUARIO(models.Model):
         return hoy.year - self.fechaN.year - (
             (hoy.month, hoy.day) < (self.fechaN.month, self.fechaN.day)
         )
+    @property
+    def saldoEqui(self):
+        return self.puntosReco/100
 
     def __str__(self):
         return f"{self.nombres} {self.apellidoP}"
