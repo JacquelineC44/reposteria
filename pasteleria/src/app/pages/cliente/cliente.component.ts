@@ -3,6 +3,10 @@ import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 @Component({
   selector: 'app-cliente',
   standalone: true,
@@ -23,25 +27,33 @@ export class ClienteComponent {
 
   username: string = '';
   password: string = '';
+<<<<<<< Updated upstream
   errorMessage: string = '';
+=======
+  errorMsg: string = '';
+>>>>>>> Stashed changes
 
   closeModal() {
     this.close.emit(); // ← Notifica al app.component.html que debe cerrar
   }
 
 
+<<<<<<< Updated upstream
   constructor(private router: Router, private auth: AuthService) {}
+=======
+  constructor(private router: Router, private authService: AuthService) {}
+>>>>>>> Stashed changes
 
   irCrearCuenta() {
   this.closeModal();
   this.router.navigate(['/registro']);
   }
 
-  iniciarSesion() {
-    if (this.username === 'test' && this.password === '1234') {
-      this.isLoggedIn = true;
-    }
-  }
+  // iniciarSesion() {
+  //   if (this.username === 'test' && this.password === '1234') {
+  //     this.isLoggedIn = true;
+  //   }
+  // }
 
   cerrarSesion() {
     this.isLoggedIn = false;
@@ -63,6 +75,6 @@ export class ClienteComponent {
     this.router.navigate(['/cliente']);
   }
 
-}
+
 
 

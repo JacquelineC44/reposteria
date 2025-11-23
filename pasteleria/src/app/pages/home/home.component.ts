@@ -2,7 +2,6 @@
 import { Component } from '@angular/core';
 import { ProductCardComponent } from '../../components/product-card/product-card.component';
 import { CommonModule } from '@angular/common';
-import {Router} from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { CarrouselComponent } from "../../components/carrousel/carrousel.component";

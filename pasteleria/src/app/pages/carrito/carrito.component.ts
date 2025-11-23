@@ -1,13 +1,16 @@
-import { Component, NgModule } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AsistentePasosComponent } from '../../components/asistente-pasos/asistente-pasos.component';
 import { FormsModule } from '@angular/forms';
 import { Pedido } from '../../models/pedido';
 import {Producto}  from '../../models/producto';
 import { AuthService } from '../../services/auth.service';
+<<<<<<< Updated upstream
 import { CarritoService } from '../../services/cart.service';
 import { Router } from '@angular/router';
 import { Item } from '../../models/item';
+=======
+>>>>>>> Stashed changes
 
 @Component({
   selector: 'app-carrito',
@@ -16,6 +19,7 @@ import { Item } from '../../models/item';
   styleUrl: './carrito.component.scss'
 })
 export class CarritoComponent {
+
   productosI: Item[] = [];
   //total: number = 0;
 
@@ -31,6 +35,7 @@ export class CarritoComponent {
       this.total = this.carritoService.total(); 
   });
   }
+
 
 
 
@@ -89,7 +94,7 @@ export class CarritoComponent {
   // precio, descripción, id, imagen, cantidad y subtotal, además recibe el total. (o no)
   //enviamos una entidad llamada 
 
-
+  
   mostrarProductos=true;
   eleccionMP = false;
   eleccionPickUp = false;
@@ -200,6 +205,7 @@ export class CarritoComponent {
     this.pedido.status = "Pedido recibido";
     this.statusActivo = this.status.indexOf(this.pedido.status);
   }
+<<<<<<< Updated upstream
   eliminar(id: number) {
   const confirmacion = window.confirm('¿Estás seguro de que quieres eliminar este producto del carrito?');
   if (confirmacion) {
@@ -217,4 +223,7 @@ decrementar(item: Item) {
   vaciar() {
     this.carritoService.vaciarCarrito();
   }
+=======
+  
+>>>>>>> Stashed changes
 }

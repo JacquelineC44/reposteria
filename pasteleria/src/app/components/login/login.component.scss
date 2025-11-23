@@ -1,0 +1,22 @@
+.login-page {
+  width: 300px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.login-input {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.login-button, .login-btn {
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.error-msg {
+  color: red;
+}
